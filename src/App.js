@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react";
-import { NavBar, Footer, Loading } from "./components";
+import NavBar from "./Components/nav-bar";
 import Header from './Components/Header.js'
 
 
