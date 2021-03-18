@@ -1,11 +1,11 @@
-
+import logo from "../Assets/pedaledal.svg"
 
 function Header() {
 
     return (
 
         <header>
-            <img src="./src/Assets/pedaledal.svg" alt="site-logo-pedal-edal"></img>
+            <img src={logo} alt="site-logo-pedal-edal"></img>
         </header>
 
     )
