@@ -1,11 +1,14 @@
-
+import logo from '../Assets/pedaledal.svg'
+import './Header.css'
+import Search from './Search.js'
 
 function Header() {
 
     return (
 
         <header>
-            <img src="./src/Assets/pedaledal.svg" alt="site-logo-pedal-edal"></img>
+            <img id="logo" src={logo} alt="site-logo-pedal-edal"/>
+            <Search id="search"/>
         </header>
 
     )
