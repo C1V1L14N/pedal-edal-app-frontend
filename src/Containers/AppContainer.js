@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
+import {Route, Switch, Redirect, BrowserRouter as Router} from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react";
 import NavBar from '../Components/nav-bar';
 import Loading from '../Components/loading';
@@ -16,6 +16,7 @@ const AppContainer = () => {
   const { isAuthenticated } = useAuth0();
   const [userData, setUserData] = useState([]);
   const [userLoggedIn, setUserLoggedIn] = useState(false);
+  const [existingUser, setExistingUser] = useState(false);
 
 
   const getUserData = async () => {
@@ -41,6 +42,7 @@ const AppContainer = () => {
   const checkIfNewUser = () => {
     if (userData[0]) {
       console.log("existing user");
+      setExistingUser(true);
     } else {
       console.log("saving new user");
       callApi();
@@ -108,7 +110,8 @@ const AppContainer = () => {
         <NavBar/>
         <div id="main-display">
           <Switch>
-            <Route exact path="/" render={() => <LandingPage ></LandingPage>}/>
+            {/* <Route exact path="/" render={() => <LandingPage ></LandingPage>}/> */}
+            <Route exact path="/" render={() => existingUser === true ? <Redirect to= "/profile" /> : <LandingPage ></LandingPage>}/>
           </Switch>
         </div>
       </Router>
