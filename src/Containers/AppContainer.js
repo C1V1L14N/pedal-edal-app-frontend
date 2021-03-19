@@ -27,6 +27,9 @@ const AppContainer = () => {
       .then(res => res.json())
       .then(data => setUserData(data))
       .then(() => setUserLoggedIn(true))
+      .then(() => console.log("location: " + userData[0].location))
+      .then(() => console.log("name: " + userData[0].name))
+      .then(() => console.log("1st pedal: " + userData[0].pedals[0].name))
     //   .then(() => createProfilePic(picture));
     }
   }
