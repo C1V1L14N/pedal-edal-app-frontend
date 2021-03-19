@@ -19,10 +19,11 @@ const AppContainer = () => {
       <Router>
         <Header/>
         <NavBar/>
-        
-        <Switch>
-          <Route exact path="/" render={() => <LandingPage ></LandingPage>}/>
-        </Switch>
+        <div id="main-display">
+          <Switch>
+            <Route exact path="/" render={() => <LandingPage ></LandingPage>}/>
+          </Switch>
+        </div>
       </Router>
     </div>
   );

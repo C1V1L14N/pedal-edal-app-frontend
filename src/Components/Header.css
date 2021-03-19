@@ -4,14 +4,14 @@ header {
     flex-grow: 1;
     width: 100%;
     height: 20vh;
-    
+    background-color: pink;
 }
 
 #logo {
     position: relative;
     margin: 0;
     border: 0;
-    top: -9em;
+    top: -11em;
     left: 2em;
     height: 20em;
     width: auto;
@@ -23,7 +23,6 @@ header {
     height: 3em;
     margin-top: auto;
     margin-bottom: auto;
-    background-color: pink;
 }
 
 #search-input {
