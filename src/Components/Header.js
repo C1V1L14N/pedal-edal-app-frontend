@@ -8,7 +8,7 @@ function Header() {
 
         <header>
             <img id="logo" src={logo} alt="site-logo-pedal-edal"/>
-            <Search id="search"/>
+            <Search id="kenny"/>
         </header>
 
     )
