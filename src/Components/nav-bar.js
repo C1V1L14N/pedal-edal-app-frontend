@@ -1,5 +1,5 @@
 import React from "react";
-import './nav-bar.css';
+import '../Style/nav-bar.css';
 
 
 import AuthNav from "./auth-nav";
