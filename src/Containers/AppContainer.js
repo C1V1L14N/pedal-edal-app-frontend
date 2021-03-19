@@ -27,16 +27,63 @@ const AppContainer = () => {
       .then(res => res.json())
       .then(data => setUserData(data))
       .then(() => setUserLoggedIn(true))
-      .then(() => console.log("location: " + userData[0].location))
-      .then(() => console.log("name: " + userData[0].name))
-      .then(() => console.log("1st pedal: " + userData[0].pedals[0].name))
+    //   .then(() => console.log("location: " + userData[0].location))
+    //   .then(() => console.log("name: " + userData[0].name))
+    //   .then(() => console.log("1st pedal: " + userData[0].pedals[0].name))
     //   .then(() => createProfilePic(picture));
     }
   }
 
   useEffect(() => {
     getUserData();
-  }, [isAuthenticated])
+  }, [isAuthenticated === true])
+
+  const checkIfNewUser = () => {
+    if (userData[0]) {
+      console.log("existing user");
+    } else {
+      console.log("saving new user");
+      callApi();
+    }
+  }
+
+  useEffect(() => {
+      console.log("checking if new user")
+      checkIfNewUser();
+  }, [userLoggedIn === true])
+
+  const callApi = async () => {
+    if(user){
+        const { email } = user;
+        // const token = await getAccessTokenSilently();
+
+        const requestOptions = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                // authorization: `Bearer ${token}`
+            },
+            // data: {
+            //     grant_type: 'client_credentials',
+            //     client_id: 'h4QURbaQAF10gmmAwXE6fje3N4ZTchki',
+            //     client_secret: 'bpXbKh0yAu5BD1UvcSZLxdmBsy8oa3y_dEE_w3X3aZEEwkDq6CH6-4sLmvDHAxV0',
+            //     audience: 'http://localhost:8080/api'
+            // },
+            body: JSON.stringify({ 
+                name: "",
+                email: email,
+                ageRange: "R_ONE",
+                location: "",
+                instrument: "",
+                faveEffect: "",
+                pedals: [],
+                boards: []
+                })
+            };
+            return await fetch('http://localhost:8080/api/users', requestOptions)
+            .then(() => getUserData())
+        }
+    }
 
 //   const createProfilePic = (picture) => {
 //     if(!document.getElementById("userPic")){
