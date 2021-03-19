@@ -8,16 +8,28 @@ header {
 }
 
 #logo {
-    position: absolute;
+    position: relative;
     margin: 0;
     border: 0;
     top: -9em;
     left: 2em;
     height: 20em;
+    width: auto;
+}
+
+#search-form {
+    position: relative;
+    margin-left: auto;
+    height: 3em;
+    margin-top: auto;
+    margin-bottom: auto;
+    background-color: pink;
 }
 
 #search-input {
-    width: 20em;
+    
+    width: 25em;
+    height: 3em;
     position: relative;
     right: 0;
     border-radius: 25px;
