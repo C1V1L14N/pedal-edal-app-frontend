@@ -17,6 +17,7 @@ const AppContainer = () => {
   const [userData, setUserData] = useState([]);
   const [userLoggedIn, setUserLoggedIn] = useState(false);
   const [existingUser, setExistingUser] = useState(false);
+  const [newUser, setNewUser] = useState(false);
 
 
   const getUserData = async () => {
@@ -84,6 +85,7 @@ const AppContainer = () => {
             };
             return await fetch('http://localhost:8080/api/users', requestOptions)
             .then(() => getUserData())
+            .then(() => setNewUser(true))
         }
     }
 
@@ -110,8 +112,8 @@ const AppContainer = () => {
         <NavBar/>
         <div id="main-display">
           <Switch>
-            {/* <Route exact path="/" render={() => <LandingPage ></LandingPage>}/> */}
-            <Route exact path="/" render={() => existingUser === true ? <Redirect to= "/profile" /> : <LandingPage ></LandingPage>}/>
+            <Route exact path="/" render={() => isAuthenticated === true ? <Redirect to= "/profile" /> :<LandingPage ></LandingPage>}/>
+            <Route exact path="/profile" render={() => newUser === true ? <Redirect to= "/details" /> : <LandingPage ></LandingPage>}/>
           </Switch>
         </div>
       </Router>
