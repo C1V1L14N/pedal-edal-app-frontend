@@ -4,7 +4,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import NavBar from '../Components/nav-bar';
 import Loading from '../Components/loading';
 import Header from '../Components/Header';
-import LandingPage from '../Components/landingPage';
+import LandingPage from './LandingPageContainer';
 
 import '../AppContainer.css';
 
