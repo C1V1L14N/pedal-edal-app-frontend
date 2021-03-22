@@ -47,7 +47,7 @@ const AppContainer = () => {
       setExistingUser(true);
     } else {
       console.log("saving new user");
-      callApi();
+      saveNewUser();
     }
   }
 
@@ -56,7 +56,7 @@ const AppContainer = () => {
       checkIfNewUser();
   }, [userLoggedIn === true])
 
-  const callApi = async () => {
+  const saveNewUser = async () => {
     if(user){
         const { email } = user;
         // const token = await getAccessTokenSilently();
@@ -90,6 +90,8 @@ const AppContainer = () => {
         }
     }
 
+    
+
 //   const createProfilePic = (picture) => {
 //     if(!document.getElementById("userPic")){
 //       const img = new Image();
@@ -114,8 +116,8 @@ const AppContainer = () => {
         <div id="main-display">
           <Switch>
             <Route exact path="/" render={() => isAuthenticated === true ? <Redirect to= "/profile" /> :<LandingPage ></LandingPage>}/>
-            <Route exact path="/profile" render={() => newUser === true ? <Redirect to= "/details" user={user}/> : <LandingPage ></LandingPage>}/>
-            <Route exact path="/details" render={() => <DetailsPage/>}/>
+            <Route exact path="/profile" render={() => newUser === true ? <Redirect to= "/details" /> : <LandingPage ></LandingPage>}/>
+            <Route exact path="/details" render={() => <DetailsPage userData={userData} setUserData={setUserData} getUserData={getUserData} userLoggedIn={userLoggedIn} />}/>
           </Switch>
         </div>
       </Router>
