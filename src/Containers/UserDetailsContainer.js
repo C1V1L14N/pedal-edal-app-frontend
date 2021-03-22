@@ -58,15 +58,15 @@ const DetailsPage = ({userData, setUserData, getUserData, userLoggedIn}) => {
 
     return (
         <div>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label name="name">Name:</label>
                     <input type="text" name="name" defaultValue={userData[0].name} onChange={handleChange} required/>
                 <label name="email">Email:</label>
-                    <input type="email" name="email" defaultValue={userData[0].email} onChange={handleChange} required/>
+                    <input type="email" name="email" defaultValue={userData[0].email} onChange={handleChange} disabled required/>
                 <div id="age-range-radios">
                     <p>Age Range:</p>
-                        <label name="ageRange" required>18-24</label>
-                            <input type="radio" name="ageRange" onChange={handleChange} value="R_ONE"/>
+                        <label name="ageRange">18-24</label>
+                            <input type="radio" name="ageRange" onChange={handleChange} value="R_ONE" required/>
                         <label name="ageRange">25-34</label>
                             <input type="radio" name="ageRange" onChange={handleChange} value="R_TWO"/>
                         <label name="ageRange">35-44</label>
@@ -85,7 +85,7 @@ const DetailsPage = ({userData, setUserData, getUserData, userLoggedIn}) => {
                 <label name="fave-instrument">Favourite Instrument:</label>
                     <input type="text" name="instrument" defaultValue={userData[0].instrument} onChange={handleChange}/>
                 <div>
-                    <button type="submit" onClick={handleSubmit}>Save</button>
+                    <button type="submit">Save</button>
                 </div>
             </form>
         </div>
