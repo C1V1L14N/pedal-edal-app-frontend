@@ -8,6 +8,7 @@ import LandingPage from './LandingPageContainer';
 
 import '../AppContainer.css';
 import '../Style/Header.css';
+import DetailsPage from './UserDetailsContainer';
 
 const AppContainer = () => {
 
@@ -113,7 +114,8 @@ const AppContainer = () => {
         <div id="main-display">
           <Switch>
             <Route exact path="/" render={() => isAuthenticated === true ? <Redirect to= "/profile" /> :<LandingPage ></LandingPage>}/>
-            <Route exact path="/profile" render={() => newUser === true ? <Redirect to= "/details" /> : <LandingPage ></LandingPage>}/>
+            <Route exact path="/profile" render={() => newUser === true ? <Redirect to= "/details" user={user}/> : <LandingPage ></LandingPage>}/>
+            <Route exact path="/details" render={() => <DetailsPage/>}/>
           </Switch>
         </div>
       </Router>
