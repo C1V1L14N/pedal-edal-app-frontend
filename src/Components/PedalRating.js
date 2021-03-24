@@ -1,6 +1,6 @@
 
 
-function pedalRating() {
+const PedalRating = () => {
 
     return(
         <input type="range" min="1" max="5" id="rating-slider"/>
@@ -8,4 +8,4 @@ function pedalRating() {
 
 }
 
-export default pedalRating;
+export default PedalRating;

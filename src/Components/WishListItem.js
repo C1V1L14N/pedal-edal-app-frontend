@@ -1,17 +1,17 @@
-import pedalDetailsbutton from './components/PedalDetailsbutton';
+import PedalDetailsbutton from './components/PedalDetailsbutton';
 
-function wishListItem() {
+const WishListItem = () => {
 
     return(
         <div id="list-item">
 
             <h3></h3>
             <img></img>
-            <pedalDetailsbutton/>
+            <PedalDetailsbutton/>
             
         </div>
     )
 
 }
 
-export default wishListItem;
+export default WishListItem;

@@ -1,6 +1,6 @@
 
 
-function ownedPedalsButton() {
+const OwnedPedalsButton = () => {
 
     return(
 
@@ -10,4 +10,4 @@ function ownedPedalsButton() {
 
 }
 
-export default ownedPedalsButton;
+export default OwnedPedalsButton;

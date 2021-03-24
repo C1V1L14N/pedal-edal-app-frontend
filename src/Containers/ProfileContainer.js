@@ -1,16 +1,16 @@
-import ownedPedalsButton from './components/OwnedPedalsButton';
-import wishListButton from './components/WishListButton';
-import pedalListItem from './components/PedalListItem';
+import OwnedPedalsButton from '../Components/OwnedPedalsButton';
+import WishListButton from '../Components/WishListButton';
+import PedalListItem from '../Components/PedalListItem';
 
 
-function profileContainer({user}) {
+const ProfileContainer = ({userData}) => {
 
     return(
         <div>
-            <ownedPedalsButton/>
-            <wishListButton/>
+            <OwnedPedalsButton/>
+            <WishListButton/>
             <ul>
-                <pedalListItem user={user}/>
+                <PedalListItem  userData={userData}/>
             </ul>
         </div>
     )
@@ -18,4 +18,4 @@ function profileContainer({user}) {
 
 }
 
-export default profileContainer;
+export default ProfileContainer;

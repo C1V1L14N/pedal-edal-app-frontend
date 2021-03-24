@@ -4,6 +4,7 @@ import '../Style/nav-bar.css';
 
 import AuthNav from "./auth-nav";
 import DetailsButton from "./details-button"
+import ProfileButton from "./profile-button"
 
 const NavBar = () => {
   return (
@@ -13,6 +14,7 @@ const NavBar = () => {
           <div className="navbar-brand logo" />
           <AuthNav />
           <DetailsButton />
+          <ProfileButton />
         </div>
       </nav>
     </div>

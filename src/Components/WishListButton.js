@@ -1,6 +1,6 @@
 
 
-function wishListButton() {
+const WishListButton = () => {
 
     return(
 
@@ -10,4 +10,4 @@ function wishListButton() {
 
 }
 
-export default wishListButton;
+export default WishListButton;

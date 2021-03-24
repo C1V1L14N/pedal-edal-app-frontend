@@ -2,7 +2,7 @@ import logo from '../Assets/pedaledal.svg'
 import '../Style/Header.css'
 import Search from './Search.js'
 
-function Header() {
+const Header = () => {
 
     return (
 
