@@ -113,7 +113,7 @@ const AppContainer = () => {
         <NavBar/>
         <div id="main-display">
           <Switch>
-            <Route exact path="/" render={() => isAuthenticated === true ? <Redirect to= "/profile" /> :<LandingPage ></LandingPage>}/>
+            <Route exact path="/" render={() => isAuthenticated === true ? <Redirect to= "/profile" user={user} /> :<LandingPage ></LandingPage>}/>
             <Route exact path="/profile" render={() => newUser === true ? <Redirect to= "/details" user={user}/> : <LandingPage ></LandingPage>}/>
             <Route exact path="/details" render={() => <DetailsPage/>}/>
           </Switch>
