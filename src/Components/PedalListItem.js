@@ -3,23 +3,26 @@ import PedalRating from './PedalRating';
 
 const PedalListItem = ({userData}) => {
 
-    if(userData[0]){
-        userData[0].pedals.forEach(pedal => {
-            console.log(`${userData[0].name}'s pedals: ${pedal.name}`);
-            return(
-                <div>
-                <h2>{pedal.name}</h2>
-                <h3>DAFUK</h3>
-                </div>
-            )
-        });
-    }
+
+    const pedalArray = userData[0].pedals.map((pedal) => {
+        return(
+        <div key={pedal.id}>
+          <div className="pedal_container">
+            <p className="pedal_name">Name: {pedal.name} </p>
+            <p className="pedal_category">Category: {pedal.pedalCategory}</p>
+            <p className="pedal_type">Effect Type: {pedal.effectType} </p>
+          </div>
+          
+          </div>
+        )})
 
     if (userData[0]){
     return(
         <div id="list-item">
-
+            
             <h1>{userData[0].name}</h1>
+            <h2>Pedals:</h2>
+            {pedalArray}
             <img></img>
             <PedalRating/>
 
