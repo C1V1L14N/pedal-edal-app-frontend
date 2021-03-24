@@ -3,6 +3,7 @@ import '../Style/nav-bar.css';
 
 
 import AuthNav from "./auth-nav";
+import DetailsButton from "./details-button"
 
 const NavBar = () => {
   return (
@@ -11,6 +12,7 @@ const NavBar = () => {
         <div className="container">
           <div className="navbar-brand logo" />
           <AuthNav />
+          <DetailsButton />
         </div>
       </nav>
     </div>
