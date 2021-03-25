@@ -118,7 +118,7 @@ const AppContainer = () => {
           <Switch>
             <Route exact path="/" render={() => isAuthenticated === true ? <Redirect to= "/profile" /> :<LandingPage ></LandingPage>}/>
             <Route exact path="/profile" render={() => newUser === true ? <Redirect to= "/details" /> : <ProfileContainer userData={userData}></ProfileContainer>}/>
-            <Route exact path="/details" render={() => <DetailsPage userData={userData} setUserData={setUserData} getUserData={getUserData} userLoggedIn={userLoggedIn} />}/>
+            <Route exact path="/details" render={() => !userData[0] ? <Redirect to ="/" /> : <DetailsPage userData={userData} setUserData={setUserData} getUserData={getUserData} userLoggedIn={userLoggedIn}/>}/>
           </Switch>
         </div>
       </Router>
