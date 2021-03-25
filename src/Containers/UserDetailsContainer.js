@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from "react";
-import { BrowserRouter as Router, Route, Switch, Redirect, Link } from "react-router-dom";
-import Loading from '../Components/loading'
+// import { BrowserRouter as Router, Route, Switch, Redirect, Link } from "react-router-dom";
+// import Loading from '../Components/loading'
 
 const DetailsPage = ({userData, setUserData, getUserData, userLoggedIn}) => {
 
-    const AGE_RANGE = ["R_ONE", "R_TWO", "R_THREE", "R_FOUR", "R_FIVE", "R_SIX", "R_SEVEN"];
+    // const AGE_RANGE = ["R_ONE", "R_TWO", "R_THREE", "R_FOUR", "R_FIVE", "R_SIX", "R_SEVEN"];
 
     const initialValues = () => {
         if (userData[0].name !== ""){

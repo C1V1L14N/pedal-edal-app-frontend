@@ -21,6 +21,15 @@ const AppContainer = () => {
   const [existingUser, setExistingUser] = useState(false);
   const [newUser, setNewUser] = useState(false);
 
+  useEffect(() => {
+    getUserData();
+  }, [isAuthenticated === true])
+
+  useEffect(() => {
+    console.log("checking if new user")
+    checkIfNewUser();
+  }, [userLoggedIn === true])
+
 
   const getUserData = async () => {
     if (user){
@@ -31,16 +40,12 @@ const AppContainer = () => {
       .then(res => res.json())
       .then(data => setUserData(data))
       .then(() => setUserLoggedIn(true))
-    //   .then(() => console.log("location: " + userData[0].location))
-    //   .then(() => console.log("name: " + userData[0].name))
-    //   .then(() => console.log("1st pedal: " + userData[0].pedals[0].name))
-    //   .then(() => createProfilePic(picture));
+      // .then(() => console.log("location: " + userData[0].location))
+      // .then(() => console.log("name: " + userData[0].name))
+      // .then(() => console.log("1st pedal: " + userData[0].pedals[0].name))
+      // .then(() => createProfilePic(picture));
     }
   }
-
-  useEffect(() => {
-    getUserData();
-  }, [isAuthenticated === true])
 
   const checkIfNewUser = () => {
     if (userData[0]) {
@@ -51,11 +56,6 @@ const AppContainer = () => {
       saveNewUser();
     }
   }
-
-  useEffect(() => {
-      console.log("checking if new user")
-      checkIfNewUser();
-  }, [userLoggedIn === true])
 
   const saveNewUser = async () => {
     if(user){
