@@ -34,7 +34,7 @@ const AppContainer = () => {
       // .then(() => console.log("location: " + userData[0].location))
       // .then(() => console.log("name: " + userData[0].name))
       // .then(() => console.log("1st pedal: " + userData[0].pedals[0].name))
-      // .then(() => createProfilePic(picture));
+      .then(() => createProfilePic(picture));
     }
   }
 
@@ -84,16 +84,16 @@ const AppContainer = () => {
 
     
 
-//   const createProfilePic = (picture) => {
-//     if(!document.getElementById("userPic")){
-//       const img = new Image();
-//       img.src = picture;
-//       img.height = 50
-//       img.width = 50
-//       img.id = "userPic"
-//       document.getElementsByTagName("header").appendChild(img);
-//     }
-//   }
+  const createProfilePic = (picture) => {
+    if(!document.getElementById("userPic")){
+      const img = new Image();
+      img.src = picture;
+      img.height = 50
+      img.width = 50
+      img.id = "userPic"
+      document.getElementById("header").appendChild(img);
+    }
+  }
 
   useEffect(() => {
     getUserData();

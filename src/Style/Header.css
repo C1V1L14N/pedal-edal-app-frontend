@@ -7,6 +7,10 @@ header {
     background-color: pink;
 }
 
+#header {
+    display: flex;
+    position: relative;
+}
 
 #logo {
     position: relative;

@@ -6,7 +6,7 @@ const Header = () => {
 
     return (
 
-        <header>
+        <header id="header">
             <img id="logo" src={logo} alt="site-logo-pedal-edal"/>
             <Search id="kenny"/>
         </header>
