@@ -11,6 +11,8 @@ const PedalListItem = ({userData}) => {
             <p className="pedal_name">Name: {pedal.name} </p>
             <p className="pedal_category">Category: {pedal.pedalCategory}</p>
             <p className="pedal_type">Effect Type: {pedal.effectType} </p>
+            <PedalRating/>
+            <img></img>
           </div>
           
         </div>
@@ -23,8 +25,6 @@ const PedalListItem = ({userData}) => {
             <h1>{userData[0].name}</h1>
             <h2>Pedals:</h2>
             {pedalArray}
-            <img></img>
-            <PedalRating/>
 
         </div>
     )

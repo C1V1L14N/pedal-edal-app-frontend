@@ -1,10 +1,7 @@
 import React, {useState, useEffect} from "react";
-// import { BrowserRouter as Router, Route, Switch, Redirect, Link } from "react-router-dom";
-// import Loading from '../Components/loading'
+import Loading from '../Components/loading'
 
-const DetailsPage = ({userData, setUserData, getUserData, userLoggedIn}) => {
-
-    // const AGE_RANGE = ["R_ONE", "R_TWO", "R_THREE", "R_FOUR", "R_FIVE", "R_SIX", "R_SEVEN"];
+const DetailsPage = ({userData, getUserData}) => {
 
     const initialValues = () => {
         if (userData[0].name !== ""){
@@ -31,21 +28,11 @@ const DetailsPage = ({userData, setUserData, getUserData, userLoggedIn}) => {
 
     const [formData, setFormData] = useState(initialValues());
     
-
     const handleChange = (event) => {
     const newState = {...formData};
-    // const newUserState = [userData[0]];
     newState[event.target.name] = event.target.value;
-    let userDataToChange = event.target.name
-    console.log(userDataToChange);
-    // setUserData({userDataToChange: event.target.value})
-    // setUserData((userData[0]) => ({ ...userData[0], userDataToChange: event.target.value }));
-    console.log(userData[0].ageRange);
-    console.log(event.target.value);
     setFormData(newState);
-    // setUserData([newUserState])
     }
-    // .bind
 
     const saveUser = async () => {
     
@@ -76,12 +63,20 @@ const DetailsPage = ({userData, setUserData, getUserData, userLoggedIn}) => {
                 })
             };
             return await fetch(`http://localhost:8080/api/users/${userData[0].id}`, requestOptions)
-            // .then(() => getUserData())
+            .then(() => getUserData())
         }
 
     const handleSubmit = (event) => {
         event.preventDefault();
         saveUser(formData);
+    }
+
+    useEffect(() => {
+        getUserData();
+      }, [])
+
+    if (!userData[0]){
+        return Loading
     }
 
 
@@ -94,19 +89,6 @@ const DetailsPage = ({userData, setUserData, getUserData, userLoggedIn}) => {
                     <input type="email" name="email" defaultValue={userData[0].email} onChange={handleChange} disabled required/>
                 <div id="age-range-radios">
                     <p>Age Range:</p>
-                        {/* {AGE_RANGE.map(ageRange => (
-                            <>
-                                <label className="age-ranges">{ageRange}</label>
-                                    <input
-                                        checked={userData[0].ageRange === ageRange}
-                                        type="radio"
-                                        name="ageRange"
-                                        value={ageRange}
-                                        required="required"
-                                        onChange={handleChange}
-                                    ></input>
-                                </>
-                        ))} */}
                         <label name="ageRange">18-24</label>
                             <input type="radio" name="ageRange" onChange={handleChange} value="R_ONE" checked={formData.ageRange === "R_ONE"} required/>
                         <label name="ageRange">25-34</label>
