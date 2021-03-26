@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import { Redirect } from "react-router";
 import Loading from '../Components/loading'
 
-const DetailsPage = ({userData, getUserData}) => {
+const DetailsPage = ({userData, getUserData, setSaved}) => {
 
     const initialValues = () => {
         if (userData[0].name !== ""){
@@ -65,6 +65,7 @@ const DetailsPage = ({userData, getUserData}) => {
             };
             return await fetch(`http://localhost:8080/api/users/${userData[0].id}`, requestOptions)
             .then(() => getUserData())
+            .then(() => setSaved(true))
         }
 
 

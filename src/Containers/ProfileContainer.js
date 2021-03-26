@@ -5,10 +5,11 @@ import PedalListItem from '../Components/PedalListItem';
 import Loading from '../Components/loading';
 
 
-const ProfileContainer = ({userData, getUserData}) => {
+const ProfileContainer = ({userData, getUserData, setSaved}) => {
 
     useEffect(() => {
         getUserData();
+        setSaved(false);
       }, [])
 
     if (!userData[0]){

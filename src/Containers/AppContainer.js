@@ -20,6 +20,7 @@ const AppContainer = () => {
   const [userLoggedIn, setUserLoggedIn] = useState(false);
   const [existingUser, setExistingUser] = useState(false);
   const [newUser, setNewUser] = useState(false);
+  const [saved, setSaved] = useState(false);
 
 
   const getUserData = async () => {
@@ -117,8 +118,8 @@ const AppContainer = () => {
         <div id="main-display">
           <Switch>
             <Route exact path="/" render={() => userData[0] ? <Redirect to= "/profile" /> :<LandingPage ></LandingPage>}/>
-            <Route exact path="/profile" render={() => newUser === true ? <Redirect to= "/details" /> : <ProfileContainer userData={userData} getUserData={getUserData}></ProfileContainer>}/>
-            <Route exact path="/details" render={() => !userData[0] ? <Redirect to ="/" /> : <DetailsPage userData={userData} getUserData={getUserData}/>}/>
+            <Route exact path="/profile" render={() => newUser === true ? <Redirect to= "/details" /> : <ProfileContainer userData={userData} getUserData={getUserData} setSaved={setSaved}></ProfileContainer>}/>
+            <Route exact path="/details" render={() => saved === true ? <Redirect to ="/" /> : <DetailsPage setSaved={setSaved} userData={userData} getUserData={getUserData}/>}/>
           </Switch>
         </div>
       </Router>
