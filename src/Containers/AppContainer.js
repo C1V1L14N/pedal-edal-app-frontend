@@ -21,15 +21,6 @@ const AppContainer = () => {
   const [existingUser, setExistingUser] = useState(false);
   const [newUser, setNewUser] = useState(false);
 
-  useEffect(() => {
-    getUserData();
-  }, [isAuthenticated === true])
-
-  useEffect(() => {
-    console.log("checking if new user")
-    checkIfNewUser();
-  }, [userLoggedIn === true])
-
 
   const getUserData = async () => {
     if (user){
@@ -104,9 +95,18 @@ const AppContainer = () => {
 //     }
 //   }
 
-    if (isLoading) {
-        return <Loading />;
-        }
+  useEffect(() => {
+    getUserData();
+  }, [isAuthenticated === true])
+
+  useEffect(() => {
+    console.log("checking if new user")
+    checkIfNewUser();
+  }, [userLoggedIn === true])
+
+  if (isLoading) {
+      return <Loading />;
+      }
 
 
   return (
@@ -116,7 +116,7 @@ const AppContainer = () => {
         <NavBar/>
         <div id="main-display">
           <Switch>
-            <Route exact path="/" render={() => isAuthenticated === true ? <Redirect to= "/profile" /> :<LandingPage ></LandingPage>}/>
+            <Route exact path="/" render={() => userData[0] ? <Redirect to= "/profile" /> :<LandingPage ></LandingPage>}/>
             <Route exact path="/profile" render={() => newUser === true ? <Redirect to= "/details" /> : <ProfileContainer userData={userData}></ProfileContainer>}/>
             <Route exact path="/details" render={() => !userData[0] ? <Redirect to ="/" /> : <DetailsPage userData={userData} setUserData={setUserData} getUserData={getUserData} userLoggedIn={userLoggedIn}/>}/>
           </Switch>

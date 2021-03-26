@@ -4,17 +4,17 @@ import PedalRating from './PedalRating';
 const PedalListItem = ({userData}) => {
 
     
-    // const pedalArray = userData[0].pedals.map((pedal) => {
-    //     return(
-    //     <div key={pedal.id}>
-    //       <div className="pedal_container">
-    //         <p className="pedal_name">Name: {pedal.name} </p>
-    //         <p className="pedal_category">Category: {pedal.pedalCategory}</p>
-    //         <p className="pedal_type">Effect Type: {pedal.effectType} </p>
-    //       </div>
+    const pedalArray = userData[0].pedals.map((pedal) => {
+        return(
+        <div key={pedal.id}>
+          <div className="pedal_container">
+            <p className="pedal_name">Name: {pedal.name} </p>
+            <p className="pedal_category">Category: {pedal.pedalCategory}</p>
+            <p className="pedal_type">Effect Type: {pedal.effectType} </p>
+          </div>
           
-    //     </div>
-    //     )})
+        </div>
+        )})
 
     if (userData[0]){
     return(
@@ -22,7 +22,7 @@ const PedalListItem = ({userData}) => {
             
             <h1>{userData[0].name}</h1>
             <h2>Pedals:</h2>
-            {/* {pedalArray} */}
+            {pedalArray}
             <img></img>
             <PedalRating/>
 
