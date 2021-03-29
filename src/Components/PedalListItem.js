@@ -11,7 +11,7 @@ const PedalListItem = ({userData}) => {
             <p className="pedal_name">Name: {pedal.name} </p>
             <p className="pedal_category">Category: {pedal.pedalCategory}</p>
             <p className="pedal_type">Effect Type: {pedal.effectType} </p>
-            <PedalRating/>
+            <PedalRating pedal={pedal}/>
             <img></img>
           </div>
           
