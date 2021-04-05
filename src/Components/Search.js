@@ -1,16 +1,15 @@
-import '../Style/desktop.css';
 
-const Search = ({userLoggedIn}) => {
 
-    if(userLoggedIn === true){
+const Search = () => {
 
-        return(
+    return(
 
         <form id="search-form">
             <input id="search-input"
             type="text"
             name="search"
             placeholder="Search here"
+            value={keyword}
             // onChange={(e) => setKeyword(e.target.value)}
             required
             />
@@ -20,14 +19,10 @@ const Search = ({userLoggedIn}) => {
             value="Search"
             />
 
-            </form>
+        </form>
 
-        )
+    )
 
-    }else{
-        return(
-            null
-        ) }
 }
 
 export default Search;
