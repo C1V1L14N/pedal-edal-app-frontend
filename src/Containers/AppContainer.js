@@ -19,6 +19,7 @@ const AppContainer = () => {
   const [existingUser, setExistingUser] = useState(false);
   const [newUser, setNewUser] = useState(false);
   const [saved, setSaved] = useState(false);
+  const [allPedals, setAllPedals] = useState([]);
 
 
   const getUserData = async () => {
@@ -30,9 +31,6 @@ const AppContainer = () => {
       .then(res => res.json())
       .then(data => setUserData(data))
       .then(() => setUserLoggedIn(true))
-      // .then(() => console.log("location: " + userData[0].location))
-      // .then(() => console.log("name: " + userData[0].name))
-      // .then(() => console.log("1st pedal: " + userData[0].pedals[0].name))
       .then(() => createProfilePic(picture));
     }
   }
@@ -94,8 +92,18 @@ const AppContainer = () => {
     }
   }
 
+  const getAllPedals = async () => {
+    if (user){
+      console.log("getting pedal data");
+      return await fetch("http://localhost:8080/api/pedals")
+      .then(res => res.json())
+      .then(data => setAllPedals(data))
+    }
+  }
+
   useEffect(() => {
     getUserData();
+    getAllPedals();
   }, [isAuthenticated === true])
 
   useEffect(() => {
@@ -111,7 +119,7 @@ const AppContainer = () => {
   return (
     <div className="App">
       <Router>
-        <Header userLoggedIn={userLoggedIn}/>
+        <Header userLoggedIn={userLoggedIn} allPedals={allPedals}/>
         <NavBar userLoggedIn={userLoggedIn}/>
         <div id="main-display">
           <Switch>
