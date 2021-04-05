@@ -9,7 +9,7 @@ const Search = () => {
             type="text"
             name="search"
             placeholder="Search here"
-            value={keyword}
+            // value={keyword}
             // onChange={(e) => setKeyword(e.target.value)}
             required
             />
