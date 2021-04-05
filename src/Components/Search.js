@@ -19,9 +19,6 @@ const Search = ({allPedals}) => {
         });
         setFilteredPedalList(filtered)
         setInput('');
-        return (
-            <h2>Buh</h2>
-        )
     }}
 
 
