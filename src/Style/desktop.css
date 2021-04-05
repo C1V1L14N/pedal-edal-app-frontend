@@ -54,10 +54,16 @@ body {
     left: -4.5em;
 }
 
+#userPic {
+    border-radius: 25px;
+}
+
 
 /* nav */
 #nav-container {
     position: relative;
+    display: flex;
+    flex-direction: row;
     background-color: green;
     width: 100%;
     height: 5em;
@@ -97,4 +103,9 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: auto;
+}
+
+#logout-btn {
+    position: relative;
+    margin-left: auto;
 }
