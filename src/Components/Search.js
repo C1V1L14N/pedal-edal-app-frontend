@@ -6,18 +6,19 @@ const Search = ({userLoggedIn}) => {
 
         return(
 
-            <form id="search-form">
-                <input id="search-input"
-                type="text"
-                name="search"
-                placeholder="Search here"
-                required
-                />
-                <input id="search-button"
-                
-                type="submit"
-                value="Search"
-                />
+        <form id="search-form">
+            <input id="search-input"
+            type="text"
+            name="search"
+            placeholder="Search here"
+            onChange={(e) => setKeyword(e.target.value)}
+            required
+            />
+            <input id="search-button"
+            
+            type="submit"
+            value="Search"
+            />
 
             </form>
 
