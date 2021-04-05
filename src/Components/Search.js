@@ -9,6 +9,7 @@ const Search = () => {
             type="text"
             name="search"
             placeholder="Search here"
+            onChange={(e) => setKeyword(e.target.value)}
             required
             />
             <input id="search-button"
