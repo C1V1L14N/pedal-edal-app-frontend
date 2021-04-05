@@ -1,26 +1,32 @@
+import '../Style/desktop.css';
 
+const Search = ({userLoggedIn}) => {
 
-const Search = () => {
+    if(userLoggedIn === true){
 
-    return(
+        return(
 
-        <form id="search-form">
-            <input id="search-input"
-            type="text"
-            name="search"
-            placeholder="Search here"
-            required
-            />
-            <input id="search-button"
-            
-            type="submit"
-            value="Search"
-            />
+            <form id="search-form">
+                <input id="search-input"
+                type="text"
+                name="search"
+                placeholder="Search here"
+                required
+                />
+                <input id="search-button"
+                
+                type="submit"
+                value="Search"
+                />
 
-        </form>
+            </form>
 
-    )
+        )
 
+    }else{
+        return(
+            null
+        ) }
 }
 
 export default Search;

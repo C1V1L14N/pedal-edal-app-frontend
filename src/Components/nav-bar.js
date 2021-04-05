@@ -1,24 +1,30 @@
 import React from "react";
-import '../Style/nav-bar.css';
+import '../Style/desktop.css';
 
 
 import AuthNav from "./auth-nav";
 import DetailsButton from "./details-button"
 import ProfileButton from "./profile-button"
 
-const NavBar = () => {
-  return (
-    <div id="nav-container">
-      <nav className="navbar navbar-expand-md navbar-light bg-light">
-        <div className="container">
-          <div className="navbar-brand logo" />
-          <AuthNav />
-          <DetailsButton />
-          <ProfileButton />
-        </div>
-      </nav>
-    </div>
-  );
+const NavBar = ({userLoggedIn}) => {
+  if(userLoggedIn === true) {
+
+    return (
+      <div id="nav-container">
+        <nav>
+          
+            <AuthNav />
+            <DetailsButton />
+            <ProfileButton />
+          
+        </nav>
+      </div>
+    );
+  }else {
+    return(
+      null
+    ) }
 };
+
 
 export default NavBar;

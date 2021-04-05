@@ -6,6 +6,7 @@ const SignupButton = () => {
   return (
     <button
       className="btn btn-primary btn-block"
+      id="login-btn-2"
       onClick={() =>
         loginWithRedirect({
           screen_hint: "signup",

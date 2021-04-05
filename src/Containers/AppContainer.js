@@ -5,11 +5,9 @@ import NavBar from '../Components/nav-bar';
 import Loading from '../Components/loading';
 import Header from '../Components/Header';
 import LandingPage from './LandingPageContainer';
-
-import '../AppContainer.css';
-import '../Style/Header.css';
 import DetailsPage from './UserDetailsContainer';
-import ProfileContainer from './ProfileContainer'
+import ProfileContainer from './ProfileContainer';
+import '../Style/desktop.css';
 
 const AppContainer = () => {
 
@@ -113,8 +111,8 @@ const AppContainer = () => {
   return (
     <div className="App">
       <Router>
-        <Header/>
-        <NavBar/>
+        <Header userLoggedIn={userLoggedIn}/>
+        <NavBar userLoggedIn={userLoggedIn}/>
         <div id="main-display">
           <Switch>
             <Route exact path="/" render={() => userData[0] ? <Redirect to= "/profile" /> :<LandingPage ></LandingPage>}/>

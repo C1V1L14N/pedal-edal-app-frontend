@@ -1,14 +1,14 @@
 import logo from '../Assets/pedaledal.svg'
-import '../Style/Header.css'
 import Search from './Search.js'
+import '../Style/desktop.css';
 
-const Header = () => {
+const Header = ({userLoggedIn}) => {
 
     return (
 
         <header id="header">
             <img id="logo" src={logo} alt="site-logo-pedal-edal"/>
-            <Search id="kenny"/>
+            <Search userLoggedIn={userLoggedIn} id="kenny"/>
         </header>
 
     )
