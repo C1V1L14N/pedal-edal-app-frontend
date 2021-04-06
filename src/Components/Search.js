@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from 'react';
 
-const Search = ({filteredPedalList, setFilteredPedalList, searchOnChange}) => {
+const Search = ({input:keyword, onChange:setKeyword}) => {
 
-    filteredPedalList.forEach(pedal => {
-        const searchResult = document.createElement("P")
-        searchResult.innerText = `${pedal.name}`
-        document.getElementById("results").appendChild(searchResult);
+    // filteredPedalList.forEach(pedal => {
+    //     const searchResult = document.createElement("P")
+    //     searchResult.innerText = `${pedal.name}`
+    //     document.getElementById("results").appendChild(searchResult);
 
-    });
+    // });
 
     return(
         <div>
@@ -16,8 +16,8 @@ const Search = ({filteredPedalList, setFilteredPedalList, searchOnChange}) => {
             type="text"
             name="search"
             placeholder="Search here"
-            onChange={searchOnChange}
-            // onSubmit={updateInput()}
+            value={keyword}
+            onChange={(e) => setKeyword(e.target.value)}
             required
             />
         </form>
