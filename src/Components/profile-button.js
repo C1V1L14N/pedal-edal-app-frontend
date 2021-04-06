@@ -7,7 +7,7 @@ const ProfileButton = () => {
   return (
     <Link  to="/profile" >
           <button id="profile-button" type="button">
-              Profile
+              My Collection
           </button>
       </Link>
   );

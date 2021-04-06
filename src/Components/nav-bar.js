@@ -10,15 +10,14 @@ const NavBar = ({userLoggedIn}) => {
   if(userLoggedIn === true) {
 
     return (
-      <div id="nav-container">
-        <nav>
+        <nav id="nav-container">
           
-            <AuthNav />
+            <AuthNav id="logout-btn"/>
             <DetailsButton />
             <ProfileButton />
           
         </nav>
-      </div>
+
     );
   }else {
     return(
