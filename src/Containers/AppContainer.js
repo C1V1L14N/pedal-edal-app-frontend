@@ -20,6 +20,8 @@ const AppContainer = () => {
   const [newUser, setNewUser] = useState(false);
   const [saved, setSaved] = useState(false);
   const [allPedals, setAllPedals] = useState([]);
+  const [input, setInput] = useState('');
+  const [filteredPedalList, setFilteredPedalList] = useState([]);
 
 
   const getUserData = async () => {
@@ -101,6 +103,25 @@ const AppContainer = () => {
     }
   }
 
+  const searchOnChange = (e) => {
+    setInput(e.target.value)
+    updateInput()
+  }
+
+  const updateInput = async () => {
+    if (input !== ''){
+    console.log("is this working?");
+    const inputToLowerCase = input.toLowerCase()
+    const filtered = allPedals.filter(pedal => {
+        if(pedal.name.toLowerCase().includes(inputToLowerCase)){
+            filteredPedalList.push(pedal)
+            console.log("fpl: ", filteredPedalList);
+    }
+    });
+    setFilteredPedalList(filtered)
+    setInput('');
+}}
+
   useEffect(() => {
     getUserData();
     getAllPedals();
@@ -119,7 +140,7 @@ const AppContainer = () => {
   return (
     <div className="App">
       <Router>
-        <Header userLoggedIn={userLoggedIn} allPedals={allPedals}/>
+        <Header userLoggedIn={userLoggedIn} allPedals={allPedals} input={input} setInput={setInput} filteredPedalList={filteredPedalList} setFilteredPedalList={setFilteredPedalList} searchOnChange={searchOnChange} />
         <NavBar userLoggedIn={userLoggedIn}/>
         <div id="main-display">
           <Switch>
