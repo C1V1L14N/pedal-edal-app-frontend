@@ -15,6 +15,9 @@ const Search = ({allPedals}) => {
             if(pedal.name.toLowerCase().includes(inputToLowerCase)){
                 filteredPedalList.push(pedal)
                 console.log("fpl: ", filteredPedalList);
+                const result = document.createElement("P");
+                result.innerText = `${pedal.name}`
+                document.getElementById("results").appendChild(result);
         }
         });
         setFilteredPedalList(filtered)
@@ -29,11 +32,12 @@ const Search = ({allPedals}) => {
             type="text"
             name="search"
             placeholder="Search here"
-            onChange={(e) => setInput(e.target.value)}
-            onSubmit={updateInput()}
+            onChange={(e) => setInput(e.target.value), updateInput()}
+            // onSubmit={updateInput()}
             required
             />
         </form>
+        <div id="results"></div>
         </div>
 
     )
