@@ -1,13 +1,19 @@
 
 
-const pedalFilter = () => {
+const pedalFilter = ({userLoggedIn}) => {
+    if(userLoggedIn === true) {
 
-    return(
-        <button>
-            All Pedals
-        </button>
-    )
+        return(
+            <button className="filter-btn">
+                All Pedals
+            </button>
+        )
 
+    }else {
+        return(
+            null
+        )
+    }
 }
 
 export default pedalFilter;

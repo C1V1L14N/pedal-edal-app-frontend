@@ -1,5 +1,6 @@
 import React from "react";
 import '../Style/desktop.css';
+import Menu from '../Components/menu.js'
 
 
 import AuthNav from "./auth-nav";
@@ -15,6 +16,7 @@ const NavBar = ({userLoggedIn}) => {
             <AuthNav id="logout-btn"/>
             <DetailsButton />
             <ProfileButton />
+            <Menu/>
           
         </nav>
 

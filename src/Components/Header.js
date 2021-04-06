@@ -10,9 +10,9 @@ const Header = ({userLoggedIn}) => {
 
         <header id="header">
             <img id="logo" src={logo} alt="site-logo-pedal-edal"/>
-            <div>                
-                <PedalFilter/>
-                <ManufacturerFilter/>
+            <div id="search-container">                
+                <PedalFilter userLoggedIn={userLoggedIn}/>
+                <ManufacturerFilter userLoggedIn={userLoggedIn}/>
                 <Search userLoggedIn={userLoggedIn} id="kenny"/>
             </div>
         </header>

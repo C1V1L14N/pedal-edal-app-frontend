@@ -1,13 +1,19 @@
 
 
-const manufacturerFilter = () => {
+const manufacturerFilter = ({userLoggedIn}) => {
+    if(userLoggedIn === true) {
 
-    return(
-        <button>
-            All Manufacturers
-        </button>
-    )
+        return(
+            <button className="filter-btn">
+                All Manufacturers
+            </button>
+        )
 
+    }else {
+        return(
+            null
+        )
+    }
 }
 
 export default manufacturerFilter;

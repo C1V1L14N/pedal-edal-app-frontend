@@ -7,14 +7,14 @@ const PedalListItem = ({userData}) => {
     const pedalArray = userData[0].pedals.map((pedal) => {
         return(
         <div key={pedal.id}>
-          <div className="pedal_container">
-            <p className="pedal_name">Name: {pedal.name} </p>
-            <p className="pedal_category">Category: {pedal.pedalCategory}</p>
-            <p className="pedal_type">Effect Type: {pedal.effectType} </p>
-            <PedalRating pedalRating={pedal.rating}/>
-            <img></img>
-          </div>
-          
+            <div id="pedal-container">
+                <p className="pedal_name">Name: {pedal.name} </p>
+                <p className="pedal_category">Category: {pedal.pedalCategory}</p>
+                <p className="pedal_type">Effect Type: {pedal.effectType} </p>
+                <PedalRating pedalRating={pedal.rating}/>
+                <img></img>
+            </div>
+        
         </div>
         )})
 
