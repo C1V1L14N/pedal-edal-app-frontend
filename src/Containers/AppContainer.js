@@ -21,8 +21,10 @@ const AppContainer = () => {
   const [newUser, setNewUser] = useState(false);
   const [saved, setSaved] = useState(false);
   const [allPedals, setAllPedals] = useState();
+  const [allManufacturers, setAllManufacturers] = useState();
   const [input, setInput] = useState('');
   const [filteredPedalList, setFilteredPedalList] = useState();
+  const [filteredManufacturerList, setFilteredManufacturerList] = useState();
 
 
   const getUserData = async () => {
@@ -101,13 +103,21 @@ const AppContainer = () => {
       return await fetch("http://localhost:8080/api/pedals")
       .then(res => res.json())
       .then(data => setAllPedals(data))
-      // .then(data => setFilteredPedalList(data))
+    }
+  }
+
+  const getAllManufacturers = async () => {
+    if (user){
+      console.log("getting manufacturers data");
+      return await fetch("http://localhost:8080/api/manufacturers")
+      .then(res => res.json())
+      .then(data => setAllManufacturers(data))
     }
   }
 
   const updateInput = async (input) => {
     const filtered = allPedals.filter(pedal => {
-    return pedal.name.toLowerCase().includes(input.toLowerCase())
+    return pedal.name.toLowerCase().includes(input.toLowerCase()) || pedal.description.toLowerCase().includes(input.toLowerCase())
     })
     setInput(input);
     if(input !== ""){
@@ -120,6 +130,7 @@ const AppContainer = () => {
   useEffect(() => {
     getUserData();
     getAllPedals();
+    getAllManufacturers();
   }, [isAuthenticated === true])
 
   useEffect(() => {
