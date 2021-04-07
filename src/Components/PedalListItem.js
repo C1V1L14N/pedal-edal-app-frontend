@@ -6,8 +6,8 @@ const PedalListItem = ({userData}) => {
     
     const pedalArray = userData[0].pedals.map((pedal) => {
         return(
-        <div key={pedal.id}>
-            <div id="pedal-container">
+        
+            <div id="pedal-container" key={pedal.id}>
                 <p className="pedal_name">Name: {pedal.name} </p>
                 <p className="pedal_category">Category: {pedal.pedalCategory}</p>
                 <p className="pedal_type">Effect Type: {pedal.effectType} </p>
@@ -15,16 +15,18 @@ const PedalListItem = ({userData}) => {
                 <img></img>
             </div>
         
-        </div>
+        
         )})
 
     if (userData[0]){
     return(
-        <div id="list-item">
+        <div id="profile-title">
             
             <h1>{userData[0].name}</h1>
             <h2>Pedals:</h2>
-            {pedalArray}
+            <div id="pedal-array">
+                {pedalArray}
+            </div>
 
         </div>
     )

@@ -1,9 +1,14 @@
-import MenuImg from '../Assets/menu-icon.png';
+import AuthNav from "./auth-nav";
+import DetailsButton from "./details-button"
 
 const Menu = () => {
 
     return (
-        <img id='menu' src={MenuImg} alt="user-menu"></img>
+        <div id="menu-container">
+            <AuthNav id="logout-btn"/>
+            <DetailsButton />
+            <button>About Pedal-edal</button>
+        </div>
     )
 
 }

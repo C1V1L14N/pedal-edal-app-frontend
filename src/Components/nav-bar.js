@@ -1,10 +1,11 @@
 import React from "react";
 import '../Style/desktop.css';
+import MenuIcon from '../Components/menuIcon.js'
 import Menu from '../Components/menu.js'
 
 
-import AuthNav from "./auth-nav";
-import DetailsButton from "./details-button"
+
+
 import ProfileButton from "./profile-button"
 import PedalBoardButton from "./pedalBoardButton.js"
 
@@ -14,11 +15,10 @@ const NavBar = ({userLoggedIn}) => {
     return (
         <nav id="nav-container">
           
-            <AuthNav id="logout-btn"/>
-            <DetailsButton />
             <ProfileButton />
             <PedalBoardButton/>
             <Menu/>
+            <MenuIcon/>
           
         </nav>
 

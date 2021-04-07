@@ -103,6 +103,12 @@ body {
     width: 3.5em;
 }
 
+#menu-container {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+}
+
 #main-display {
     background-color: lightblue;
     position: relative;
@@ -144,6 +150,11 @@ body {
     margin-left: auto;
 }
 
+#profile-title {
+    width: 100%;
+    height: 6em;
+}
+
 #pedal-list {
     display: inline;
 }
@@ -155,4 +166,10 @@ body {
     width: 12em;
     border-radius: 5px;
     background-color: orange;
+}
+
+#pedal-array {
+    display: flex;
+    flex-direction: row wrap;
+    overflow: scroll;
 }
