@@ -1,13 +1,9 @@
 import React, {useState, useEffect} from 'react';
 
-const Search = ({input:keyword, onChange:setKeyword}) => {
+const Search = ({userLoggedIn, input:keyword, onChange:setKeyword}) => {
 
-    // filteredPedalList.forEach(pedal => {
-    //     const searchResult = document.createElement("P")
-    //     searchResult.innerText = `${pedal.name}`
-    //     document.getElementById("results").appendChild(searchResult);
-
-    // });
+    if(userLoggedIn === true){
+    
 
     return(
         <div>
@@ -26,6 +22,10 @@ const Search = ({input:keyword, onChange:setKeyword}) => {
 
     )
 
+}else{
+    return(
+        null
+    )
 }
-
+}
 export default Search;
