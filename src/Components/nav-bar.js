@@ -1,24 +1,27 @@
 import React from "react";
 import '../Style/desktop.css';
+import Menu from '../Components/menu.js'
 
 
 import AuthNav from "./auth-nav";
 import DetailsButton from "./details-button"
 import ProfileButton from "./profile-button"
+import PedalBoardButton from "./pedalBoardButton.js"
 
 const NavBar = ({userLoggedIn}) => {
   if(userLoggedIn === true) {
 
     return (
-      <div id="nav-container">
-        <nav>
+        <nav id="nav-container">
           
-            <AuthNav />
+            <AuthNav id="logout-btn"/>
             <DetailsButton />
             <ProfileButton />
+            <PedalBoardButton/>
+            <Menu/>
           
         </nav>
-      </div>
+
     );
   }else {
     return(
