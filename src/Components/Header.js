@@ -11,18 +11,11 @@ const Header = ({userLoggedIn, input, setInput, filteredPedalList, onChange}) =>
 
         <header id="header">
             <img id="logo" src={logo} alt="site-logo-pedal-edal"/>
-<<<<<<< HEAD
             <div id="search-container">                
                 <PedalFilter userLoggedIn={userLoggedIn}/>
                 <ManufacturerFilter userLoggedIn={userLoggedIn}/>
-                <Search userLoggedIn={userLoggedIn} id="kenny"/>
-=======
-            <div>                
-                <PedalFilter/>
-                <ManufacturerFilter/>
                 <Search userLoggedIn={userLoggedIn} filteredPedalList={filteredPedalList} input={input} setInput={setInput} onChange={onChange} id="kenny"/>
                 <PedalList filteredPedalList={filteredPedalList} />
->>>>>>> develop
             </div>
         </header>
 
