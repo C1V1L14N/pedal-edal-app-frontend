@@ -95,7 +95,7 @@ body {
 
 #menu {
     position: relative;
-    margin-left: auto;
+    margin-left: 2em;
     margin-top: auto;
     margin-bottom: auto;
     margin-right: 2em;
@@ -105,9 +105,18 @@ body {
 }
 
 #menu-container {
+    position: relative;
     display: flex;
     flex-direction: row;
     margin-left: auto;
+}
+
+.menu-btn {
+    position: relative;
+    height: 50%;
+    border-radius: 45px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 #main-display {
@@ -146,10 +155,6 @@ body {
     margin-bottom: auto;
 }
 
-#logout-btn {
-    position: relative;
-    margin-left: auto;
-}
 
 #profile-title {
     width: 100%;

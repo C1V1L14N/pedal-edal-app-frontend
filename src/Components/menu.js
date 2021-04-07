@@ -1,13 +1,14 @@
 import AuthNav from "./auth-nav";
-import DetailsButton from "./details-button"
+import DetailsButton from "./details-button";
+import '../Style/desktop.css';
 
 const Menu = () => {
 
     return (
         <div id="menu-container">
-            <AuthNav id="logout-btn"/>
+            <AuthNav/>
             <DetailsButton />
-            <button>About Pedal-edal</button>
+            <button className="menu-btn" type="button">About Pedal-edal</button>
         </div>
     )
 
