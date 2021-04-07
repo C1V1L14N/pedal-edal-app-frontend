@@ -110,7 +110,11 @@ const AppContainer = () => {
     return pedal.name.toLowerCase().includes(input.toLowerCase())
     })
     setInput(input);
-    setFilteredPedalList(filtered);
+    if(input !== ""){
+      setFilteredPedalList(filtered);
+    }else{
+      setFilteredPedalList(undefined);
+    }
   }
 
   useEffect(() => {
