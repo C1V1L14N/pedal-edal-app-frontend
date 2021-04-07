@@ -1,33 +1,24 @@
-import '../Style/desktop.css';
+import React, {useState, useEffect} from 'react';
 
-const Search = ({userLoggedIn}) => {
+const Search = ({input:keyword, onChange:setKeyword}) => {
 
-    if(userLoggedIn === true){
-
-        return(
-
+    return(
+        <div>
         <form id="search-form">
             <input id="search-input"
             type="text"
             name="search"
             placeholder="Search here"
-            // onChange={(e) => setKeyword(e.target.value)}
+            value={keyword}
+            onChange={(e) => setKeyword(e.target.value)}
             required
             />
-            <input id="search-button"
-            
-            type="submit"
-            value="Search"
-            />
+        </form>
+        <div id="results"></div>
+        </div>
 
-            </form>
+    )
 
-        )
-
-    }else{
-        return(
-            null
-        ) }
 }
 
 export default Search;
