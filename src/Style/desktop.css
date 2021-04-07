@@ -68,6 +68,15 @@ body {
     left: 19.6em;
 }
 
+#search-results {
+    position: relative;
+    background-color: aliceblue;
+    max-height: 20em;
+    width: 20em;
+    z-index: 1;
+    border-radius: 2px;
+}
+
 #userPic {
     border-radius: 25px;
 }

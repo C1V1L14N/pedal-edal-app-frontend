@@ -15,7 +15,6 @@ const Search = ({userLoggedIn, input:keyword, onChange:setKeyword}) => {
                 required
                 />
             </form>
-            <div id="results"></div>
             </div>
 
         )
