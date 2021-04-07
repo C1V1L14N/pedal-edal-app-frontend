@@ -12,6 +12,7 @@ const Search = ({userLoggedIn, input:keyword, onChange:setKeyword}) => {
                 placeholder="Search here"
                 value={keyword}
                 onChange={(e) => setKeyword(e.target.value)}
+                autoComplete="off"
                 required
                 />
             </form>

@@ -103,6 +103,7 @@ const AppContainer = () => {
       return await fetch("http://localhost:8080/api/pedals")
       .then(res => res.json())
       .then(data => setAllPedals(data))
+      .then(data => setFilteredPedalList(data))
     }
   }
 
