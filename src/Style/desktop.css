@@ -174,3 +174,9 @@ body {
     flex-direction: row wrap;
     overflow: scroll;
 }
+
+#pedalBoard-page {
+    height: 100%;
+    width: 100%;
+    background-color: blueviolet;
+}

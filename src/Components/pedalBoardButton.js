@@ -5,7 +5,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 const PedalBoardButton = () => {
 
     return (
-    <Link  to="/" >
+    <Link  to="/pedalboard" >
             <button id="profile-button" type="button">
                 Pedal Board
             </button>
@@ -14,3 +14,4 @@ const PedalBoardButton = () => {
 };
 
 export default PedalBoardButton;
+

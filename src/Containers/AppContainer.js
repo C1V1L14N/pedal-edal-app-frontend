@@ -1,12 +1,15 @@
 import React, {useState, useEffect} from 'react';
 import {Route, Switch, Redirect, BrowserRouter as Router} from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react";
+import { DndProvider } from "react-dnd";
+// import HTML5Backend from "react-dnd-html5-backend";
 import NavBar from '../Components/nav-bar';
 import Loading from '../Components/loading';
 import Header from '../Components/Header';
 import LandingPage from './LandingPageContainer';
 import DetailsPage from './UserDetailsContainer';
 import ProfileContainer from './ProfileContainer';
+import PedalBoard from './PedalBoardContainer';
 import '../Style/desktop.css';
 
 
@@ -154,6 +157,7 @@ const AppContainer = () => {
             <Route exact path="/" render={() => userData[0] ? <Redirect to= "/profile" /> :<LandingPage ></LandingPage>}/>
             <Route exact path="/profile" render={() => newUser === true ? <Redirect to= "/details" /> : <ProfileContainer userData={userData} getUserData={getUserData} setSaved={setSaved}></ProfileContainer>}/>
             <Route exact path="/details" render={() => saved === true ? <Redirect to ="/" /> : <DetailsPage setSaved={setSaved} userData={userData} getUserData={getUserData}/>}/>
+            <Route exact path="/pedalboard" render={() => <PedalBoard/>}/>
           </Switch>
         </div>
       </Router>
