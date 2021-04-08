@@ -180,3 +180,7 @@ body {
     width: 100%;
     background-color: blueviolet;
 }
+
+#pedal-board-title > h2 {
+    margin: 0;
+}

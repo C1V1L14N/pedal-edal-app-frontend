@@ -157,7 +157,7 @@ const AppContainer = () => {
             <Route exact path="/" render={() => userData[0] ? <Redirect to= "/profile" /> :<LandingPage ></LandingPage>}/>
             <Route exact path="/profile" render={() => newUser === true ? <Redirect to= "/details" /> : <ProfileContainer userData={userData} getUserData={getUserData} setSaved={setSaved}></ProfileContainer>}/>
             <Route exact path="/details" render={() => saved === true ? <Redirect to ="/" /> : <DetailsPage setSaved={setSaved} userData={userData} getUserData={getUserData}/>}/>
-            <Route exact path="/pedalboard" render={() => <PedalBoard/>}/>
+            <Route exact path="/pedalboard" render={() => <PedalBoard userPedals={userData[0].pedals}/>}/>
           </Switch>
         </div>
       </Router>
