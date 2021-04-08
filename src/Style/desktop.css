@@ -12,7 +12,7 @@ body {
 }
 
 .App {
-    position: relative;
+    position: fixed;
     height: 100%;
     width: 100%;
 }
@@ -93,9 +93,18 @@ body {
     height: 5em;
 }
 
+.profile-board-button {
+    margin: 0.1em;
+    margin-left: 1em;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 50%;
+    border-radius: 45px;
+}
+
 #menu {
     position: relative;
-    margin-left: 2em;
+    margin-left: 0.5em;
     margin-top: auto;
     margin-bottom: auto;
     margin-right: 2em;
@@ -117,6 +126,12 @@ body {
     border-radius: 45px;
     margin-top: auto;
     margin-bottom: auto;
+}
+
+#menu-btn-link {
+    display: flex;
+    height: 100%;
+    text-decoration: none;
 }
 
 #main-display {
@@ -184,4 +199,17 @@ body {
     height: 100%;
     width: 100%;
     background-color: blueviolet;
+}
+
+#about-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#about-container > h2{
+    
 }

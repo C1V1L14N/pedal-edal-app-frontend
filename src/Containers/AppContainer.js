@@ -10,6 +10,8 @@ import LandingPage from './LandingPageContainer';
 import DetailsPage from './UserDetailsContainer';
 import ProfileContainer from './ProfileContainer';
 import PedalBoard from './PedalBoardContainer';
+import PedalDetailContainer from './PedalDetailContainer';
+import About from './AboutContainer';
 import '../Style/desktop.css';
 
 
@@ -158,6 +160,8 @@ const AppContainer = () => {
             <Route exact path="/profile" render={() => newUser === true ? <Redirect to= "/details" /> : <ProfileContainer userData={userData} getUserData={getUserData} setSaved={setSaved}></ProfileContainer>}/>
             <Route exact path="/details" render={() => saved === true ? <Redirect to ="/" /> : <DetailsPage setSaved={setSaved} userData={userData} getUserData={getUserData}/>}/>
             <Route exact path="/pedalboard" render={() => <PedalBoard/>}/>
+            <Route exact path="/pedal-details" render={() => <PedalDetailContainer/>}/>
+            <Route exact path="/about" render={() => <About/>}/>
           </Switch>
         </div>
       </Router>

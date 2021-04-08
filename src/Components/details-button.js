@@ -6,7 +6,7 @@ import '../Style/desktop.css';
 const DetailsButton = () => {
 
   return (
-    <Link  to="/details" >
+    <Link id="menu-btn-link" to="/details" >
           <button className="menu-btn" type="button">
               Details
           </button>
