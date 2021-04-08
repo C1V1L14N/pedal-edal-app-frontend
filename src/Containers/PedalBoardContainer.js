@@ -4,12 +4,22 @@ import '../Style/desktop.css';
 
 const PedalBoard = ({userPedals}) => {
 
+    const makeToScale = (pedal) => {
+        pedal.width = Math.round((pedal.width * 3.7795275591)/3)
+        pedal.length = Math.round((pedal.length * 3.7795275591)/3)
+        }
+
     
     const pedalArray = userPedals.map((pedal) => {
+
+        console.log("width before", pedal.width);
+        makeToScale(pedal)
+        console.log("width after", pedal.width);
+
         return(
         
             <div id="pedal-board-pedals-container" key={pedal.id}>
-                <img src={process.env.PUBLIC_URL + pedal.image} />
+                <img src={process.env.PUBLIC_URL + pedal.image} height={pedal.length} width={pedal.width} />
             </div>
         
         
@@ -22,6 +32,8 @@ const PedalBoard = ({userPedals}) => {
             <h2>Your Pedals:</h2>
             <div id="pedal-array">
                 {pedalArray}
+            </div>
+            <div id="pedal-board-itself">
             </div>
 
         </div>
