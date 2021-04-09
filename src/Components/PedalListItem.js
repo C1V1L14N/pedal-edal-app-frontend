@@ -3,6 +3,7 @@ import PedalRating from './PedalRating';
 import Bullseye from '../Assets/bullseye.png'
 import { BrowserRouter as Router, Route, Switch, Redirect, Link } from "react-router-dom";
 
+
 const PedalListItem = ({userData}) => {
 
     
@@ -10,6 +11,7 @@ const PedalListItem = ({userData}) => {
         return(
         
             <div id="pedal-container" key={pedal.id}>
+                <img src={process.env.PUBLIC_URL + pedal.image} height="30em" width="20em"/>
                 <p className="pedal_name">Name: {pedal.name} </p>
                 <p className="pedal_category">Category: {pedal.pedalCategory}</p>
                 <p className="pedal_type">Effect Type: {pedal.effectType} </p>
