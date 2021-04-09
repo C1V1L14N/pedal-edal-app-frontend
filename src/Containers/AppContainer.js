@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {Route, Switch, Redirect, BrowserRouter as Router} from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react";
 import { DndProvider } from "react-dnd";
-// import HTML5Backend from "react-dnd-html5-backend";
+import HTML5Backend from "react-dnd-html5-backend";
 import NavBar from '../Components/nav-bar';
 import Loading from '../Components/loading';
 import Header from '../Components/Header';
@@ -28,6 +28,7 @@ const AppContainer = () => {
   const [input, setInput] = useState('');
   const [filteredPedalList, setFilteredPedalList] = useState();
   const [filteredManufacturerList, setFilteredManufacturerList] = useState();
+  const [images, setImages] = useState([]);
 
 
   const getUserData = async () => {
@@ -107,6 +108,7 @@ const AppContainer = () => {
       .then(res => res.json())
       .then(data => setAllPedals(data))
       .then(data => setFilteredPedalList(data))
+      .then(() => makePedalImages())
     }
   }
 
@@ -130,6 +132,23 @@ const AppContainer = () => {
       setFilteredPedalList(undefined);
     }
   }
+
+  const makePedalImages = () => {
+
+    let pedalImages = []
+
+    userData[0].pedals.forEach(pedal => {
+        pedalImages.push(pedal.image)
+    });
+
+    setImages(pedalImages);
+    console.log(pedalImages);
+}
+
+  // useEffect(() => {
+  //     console.log("making pedal images")
+  //     makePedalImages();
+  // }, [])
 
   useEffect(() => {
     getUserData();
@@ -157,7 +176,7 @@ const AppContainer = () => {
             <Route exact path="/" render={() => userData[0] ? <Redirect to= "/profile" /> :<LandingPage ></LandingPage>}/>
             <Route exact path="/profile" render={() => newUser === true ? <Redirect to= "/details" /> : <ProfileContainer userData={userData} getUserData={getUserData} setSaved={setSaved}></ProfileContainer>}/>
             <Route exact path="/details" render={() => saved === true ? <Redirect to ="/" /> : <DetailsPage setSaved={setSaved} userData={userData} getUserData={getUserData}/>}/>
-            <Route exact path="/pedalboard" render={() => <PedalBoard userPedals={userData[0].pedals}/>}/>
+            <Route exact path="/pedalboard" render={() => <PedalBoard userPedals={userData[0].pedals} images={images} setImages={setImages} />}/>
           </Switch>
         </div>
       </Router>

@@ -1,49 +1,53 @@
-import React from 'react';
+import React, { useCallback, useState, useEffect } from "react";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
+import PedalBoardPedalArray from '../Components/pedalBoardPedalArray';
 import '../Style/desktop.css';
+import ImageList from '../Components/pedalBoardPedalArray';
+// import { isTouchDevice } from "./utils";
+// import TouchBackend from "react-dnd-touch-backend";
+import update from "immutability-helper";
+// import cuid from "cuid";
+
+const PedalBoard = ({userPedals, images, setImages}) => {
+
+    // const [images, setImages] = useState([]);
 
 
-const PedalBoard = ({userPedals}) => {
+    // const makePedalImages = () => {
 
-    const makeToScale = (pedal) => {
-        pedal.width = Math.round((pedal.width * 3.7795275591)/3)
-        pedal.length = Math.round((pedal.length * 3.7795275591)/3)
-        }
+    //     let pedalImages = []
 
-    
-    const pedalArray = userPedals.map((pedal) => {
+    //     userPedals.forEach(pedal => {
+    //         pedalImages.push(pedal.image)
+    //     });
 
-        console.log("width before", pedal.width);
-        makeToScale(pedal)
-        console.log("width after", pedal.width);
+    //     setImages(pedalImages);
+    //     console.log(pedalImages[0]);
+    // }
 
-        return(
-        
-            <div id="pedal-board-pedals-container" key={pedal.id}>
-                <img src={process.env.PUBLIC_URL + pedal.image} height={pedal.length} width={pedal.width} />
-            </div>
-        
-        
-        )})
+    // useEffect(() => {
+    //     console.log("making pedal images")
+    //     makePedalImages();
+    // }, [])
 
-    if (userPedals){
+
+    const moveImage = (dragIndex, hoverIndex) => {
+        const draggedImage = images[dragIndex];
+        setImages(
+        update(images, {
+            $splice: [[dragIndex, 1], [hoverIndex, 0, draggedImage]]
+        })
+        );
+    };
+
+
+
     return(
-        <div id="pedal-board-title">
-        
-            <h2>Your Pedals:</h2>
-            <div id="pedal-array">
-                {pedalArray}
-            </div>
-            <div id="pedal-board-itself">
-            </div>
-
-        </div>
+        <DndProvider backend={HTML5Backend}>
+            <ImageList userPedals={userPedals} images={images} moveImage={moveImage}/>
+        </DndProvider>
     )
-    }else{
-        return(
-            <h1>No pedal data</h1>
-        )
-    }
-
 }
 
 export default PedalBoard;
