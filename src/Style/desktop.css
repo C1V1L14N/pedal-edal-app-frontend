@@ -17,6 +17,22 @@ body {
     width: 100%;
 }
 
+#landing-page {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: chartreuse;
+    display: flex;
+    flex-direction: column;
+}
+
+#main-display {
+    background-color: lightblue;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
 #header {
     width: 100%;
     height: 8em;
@@ -30,6 +46,8 @@ body {
     top: -8em;
 }
 
+
+/* Search components */
 #search-container {
     background-color: lightblue;
     margin: 0;
@@ -78,9 +96,12 @@ body {
     border-radius: 2px;
 }
 
+
+
 #userPic {
     border-radius: 25px;
 }
+
 
 
 /* nav */
@@ -134,21 +155,9 @@ body {
     text-decoration: none;
 }
 
-#main-display {
-    background-color: lightblue;
-    position: relative;
-    height: 100%;
-    width: 100%;
-}
 
-#landing-page {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    background-color: chartreuse;
-    display: flex;
-    flex-direction: column;
-}
+
+
 
 #login-btn {
     position: relative;
@@ -177,16 +186,33 @@ body {
 }
 
 #pedal-list {
-    display: inline;
+
 }
 
 #pedal-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
     margin: 1em;
     padding: 0.25em;
-    height: 9em;
+    height: 14em;
     width: 12em;
     border-radius: 5px;
     background-color: orange;
+}
+
+#pedal-detail-link {
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+#pedal-detail-link-img {
+    position: relative;
+    margin-left: auto;
+    height: 3em;
+    width: 3em;
 }
 
 #pedal-array {
@@ -211,5 +237,14 @@ body {
 }
 
 #about-container > h2{
-    
+    position: relative;
+    top: -10em;
+    margin: 0;
+}
+
+#about-container > p{
+    position: relative;
+    top: -10em;
+    margin: 0;
+    text-align: center;
 }

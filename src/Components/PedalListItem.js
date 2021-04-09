@@ -1,5 +1,7 @@
 import PedalDetailsbutton from './details-button';
 import PedalRating from './PedalRating';
+import Bullseye from '../Assets/bullseye.png'
+import { BrowserRouter as Router, Route, Switch, Redirect, Link } from "react-router-dom";
 
 const PedalListItem = ({userData}) => {
 
@@ -13,6 +15,7 @@ const PedalListItem = ({userData}) => {
                 <p className="pedal_type">Effect Type: {pedal.effectType} </p>
                 <PedalRating pedalRating={pedal.rating}/>
                 <img></img>
+                <Link id="pedal-detail-link" to="/pedal-detail"><img id="pedal-detail-link-img" src={Bullseye}></img></Link>
             </div>
         
         
