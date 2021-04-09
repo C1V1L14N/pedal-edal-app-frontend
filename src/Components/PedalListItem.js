@@ -16,7 +16,6 @@ const PedalListItem = ({userData}) => {
                 <p className="pedal_category">Category: {pedal.pedalCategory}</p>
                 <p className="pedal_type">Effect Type: {pedal.effectType} </p>
                 <PedalRating pedalRating={pedal.rating}/>
-                <img></img>
                 <Link id="pedal-detail-link" to="/pedal-detail"><img id="pedal-detail-link-img" src={Bullseye}></img></Link>
             </div>
         

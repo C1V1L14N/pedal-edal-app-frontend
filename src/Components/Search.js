@@ -9,7 +9,7 @@ const Search = ({userLoggedIn, input:keyword, onChange:setKeyword}) => {
                 <input id="search-input"
                 type="text"
                 name="search"
-                placeholder="Search here"
+                placeholder="Find Pedals or Manufacturers"
                 value={keyword}
                 onChange={(e) => setKeyword(e.target.value)}
                 autoComplete="off"
