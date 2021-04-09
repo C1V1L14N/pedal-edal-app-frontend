@@ -21,9 +21,8 @@ const ProfileContainer = ({userData, getUserData, setSaved}) => {
         <div id="profile-container">
             <OwnedPedalsButton/>
             <WishListButton/>
-            <div id="pedal-list">
-                <PedalListItem userData={userData}/>
-            </div>
+            <PedalListItem id="pedal-list-item" userData={userData}/>
+            
         </div>
     )
 

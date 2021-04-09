@@ -11,12 +11,13 @@ const PedalListItem = ({userData}) => {
         return(
         
             <div id="pedal-container" key={pedal.id}>
-                <img src={process.env.PUBLIC_URL + pedal.image} height="30em" width="20em"/>
-                <p className="pedal_name">Name: {pedal.name} </p>
-                <p className="pedal_category">Category: {pedal.pedalCategory}</p>
-                <p className="pedal_type">Effect Type: {pedal.effectType} </p>
+
+                <p className="pedal_name">{pedal.name}</p>
+                <p className="pedal_manufacturer">{pedal.manufacturer}</p>
+                <img id="pedal-item-image" src={process.env.PUBLIC_URL + pedal.image} height="30em" width="20em"/>
                 <PedalRating pedalRating={pedal.rating}/>
                 <Link id="pedal-detail-link" to="/pedal-detail"><img id="pedal-detail-link-img" src={Bullseye}></img></Link>
+            
             </div>
         
         

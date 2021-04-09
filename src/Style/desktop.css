@@ -28,7 +28,7 @@ body {
 }
 
 #main-display {
-    background-color: rgb(110, 188, 214);
+    background-color: transparent;
     position: relative;
     height: 100%;
     width: 100%;
@@ -209,26 +209,48 @@ body {
     height: 6em;
 }
 
-#pedal-list {
+#pedal-array {
+    background-color: transparent;
+    display: flex;
+    flex-wrap: wrap;
+    height: 22em;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: scroll;
+}
 
+#pedal-list-item {
+    position: relative;
+    height: 100%;
+    width: 100%;
 }
 
 #pedal-container {
-    position: relative;
     display: flex;
     flex-direction: column;
     margin: 1em;
     padding: 0.25em;
-    height: 14em;
-    border-radius: 5px;
-    background-color: orange;
+    height: 300px;
+    min-width: 200px;
+    border-radius: 10px;
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(160,160,255,1) 60%, rgba(0,212,255,0.12788865546218486) 100%);
+}
+
+#pedal-item-image {
+    position: relative;
+    height: 5em;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #pedal-detail-link {
     position: relative;
     display: flex;
-    height: 100%;
-    width: 100%;
+    height: auto;
+    width: auto;
 }
 
 #pedal-detail-link-img {
@@ -236,14 +258,6 @@ body {
     margin-left: auto;
     height: 3em;
     width: 3em;
-}
-
-#pedal-array {
-    display: flex;
-    max-width: 90%;
-    flex-direction: row wrap;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 #pedalBoard-page {
