@@ -1,10 +1,10 @@
-
+import '../Style/desktop.css';
 
 const pedalFilter = ({userLoggedIn}) => {
     if(userLoggedIn === true) {
 
         return(
-            <button className="filter-btn">
+            <button className="menu-btn">
                 All Pedals
             </button>
         )

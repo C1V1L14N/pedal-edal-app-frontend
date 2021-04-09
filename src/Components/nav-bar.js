@@ -17,7 +17,7 @@ const NavBar = ({userLoggedIn}) => {
           
             <ProfileButton />
             <PedalBoardButton/>
-            <Menu/>
+            <Menu userLoggedIn={userLoggedIn}/>
             <MenuIcon/>
           
         </nav>
