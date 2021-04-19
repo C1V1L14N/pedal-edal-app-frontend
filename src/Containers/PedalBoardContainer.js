@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../Style/desktop.css';
 
 import { DragDropContext, Droppable, Draggable} from 'react-beautiful-dnd';
 
 
 const PedalBoard = ({userPedals}) => {
+
+    const [resized, setResized] = useState(false);
 
     const makeToScale = (pedal) => {
         pedal.width = Math.round((pedal.width * 3.7795275591)/3)
@@ -21,9 +23,12 @@ const PedalBoard = ({userPedals}) => {
                     {(provided) => (
                         <ul id="droppable-pedal-list" {...provided.droppableProps} ref={provided.innerRef}>
                             {userPedals.map((pedal, index) => {
-                                console.log("width before", pedal.width);
-                                makeToScale(pedal)
-                                console.log("width after", pedal.width);
+                                if(resized === false){
+                                    console.log("width before", pedal.width);
+                                    makeToScale(pedal)
+                                    console.log("width after", pedal.width);
+                                    setResized(true)
+                                }
                                 return (
                                     <Draggable key={pedal.id} draggableId={pedal.name} index={index}>
                                         {(provided) => (
@@ -34,6 +39,7 @@ const PedalBoard = ({userPedals}) => {
                                     </Draggable>
                                 );
                             })}
+                            {provided.placeholder}
                         </ul>
                     )}
                 </Droppable>
