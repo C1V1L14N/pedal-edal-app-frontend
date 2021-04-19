@@ -209,17 +209,6 @@ body {
     height: 6em;
 }
 
-#pedal-array {
-    background-color: transparent;
-    display: flex;
-    flex-wrap: wrap;
-    height: 22em;
-    max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    overflow: scroll;
-}
-
 #pedal-list-item {
     position: relative;
     height: 100%;
@@ -296,6 +285,37 @@ body {
     flex-direction: row;
     justify-content: center;
     background-image: url('../Assets/basic_pedalBoard.png');
+    background-size: 100%;
     height: 256px;
     width: 640px;
+}
+
+#pedal-array {
+    background-color: transparent;
+    display: flex;
+    flex-wrap: wrap;
+    height: 22em;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: scroll;
+}
+
+#pedal-board-array {
+    background-color: transparent;
+    display: flex;
+    flex-wrap: wrap;
+    height: 10em;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: scroll;
+}
+
+#pedal-board-itself {
+    width: 90%;
+    height: 23em;
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
 }

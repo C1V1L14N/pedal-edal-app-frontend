@@ -30,7 +30,7 @@ const PedalBoard = ({userPedals}) => {
         <div id="pedal-board-title">
         
             <h2>Your Pedals:</h2>
-            <div id="pedal-array">
+            <div id="pedal-board-array">
                 {pedalArray}
             </div>
             <div id="pedal-board-itself">
