@@ -234,8 +234,7 @@ body {
     height: 300px;
     min-width: 200px;
     border-radius: 10px;
-    background: rgb(2,0,36);
-    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(160,160,255,1) 60%, rgba(0,212,255,0.12788865546218486) 100%);
+    background: rgb(84, 75, 255);
 }
 
 #pedal-item-image {
