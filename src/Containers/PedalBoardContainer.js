@@ -1,6 +1,8 @@
 import React from 'react';
 import '../Style/desktop.css';
 
+import { DragDropContext, Droppable, Draggable} from 'react-beautiful-dnd';
+
 
 const PedalBoard = ({userPedals}) => {
 
@@ -10,39 +12,35 @@ const PedalBoard = ({userPedals}) => {
         }
 
     
-    const pedalArray = userPedals.map((pedal) => {
-
-        console.log("width before", pedal.width);
-        makeToScale(pedal)
-        console.log("width after", pedal.width);
 
         return(
-        
-            <div id="pedal-board-pedals-container" key={pedal.id}>
-                <img src={process.env.PUBLIC_URL + pedal.image} height={pedal.length} width={pedal.width} />
+            <div>
+                <h2>Your Pedals:</h2>
+            <DragDropContext>
+                <Droppable droppableId="droppable-pedal-list">
+                    {(provided) => (
+                        <ul id="droppable-pedal-list" {...provided.droppableProps} ref={provided.innerRef}>
+                            {userPedals.map((pedal, index) => {
+                                console.log("width before", pedal.width);
+                                makeToScale(pedal)
+                                console.log("width after", pedal.width);
+                                return (
+                                    <Draggable key={pedal.id} draggableId={pedal.name} index={index}>
+                                        {(provided) => (
+                                                <li id="pedal-board-pedals-container" ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                                                <img src={process.env.PUBLIC_URL + pedal.image} height={pedal.length} width={pedal.width} />
+                                                </li>
+                                            )}
+                                    </Draggable>
+                                );
+                            })}
+                        </ul>
+                    )}
+                </Droppable>
+            </DragDropContext>
             </div>
-        
-        
-        )})
-
-    if (userPedals){
-    return(
-        <div id="pedal-board-title">
-        
-            <h2>Your Pedals:</h2>
-            <div id="pedal-array">
-                {pedalArray}
-            </div>
-            <div id="pedal-board-itself">
-            </div>
-
-        </div>
-    )
-    }else{
-        return(
-            <h1>No pedal data</h1>
+                    
         )
-    }
 
 }
 
