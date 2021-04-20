@@ -19,7 +19,7 @@ const PedalBoard = ({userPedals}) => {
         return(
         
             <div id="pedal-board-pedals-container" key={pedal.id}>
-                <img src={process.env.PUBLIC_URL + pedal.image} height={pedal.length} width={pedal.width} />
+                <img id="pedal-board-images" src={process.env.PUBLIC_URL + pedal.image} height={pedal.length} width={pedal.width} />
             </div>
         
         

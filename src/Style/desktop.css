@@ -228,7 +228,7 @@ body {
 
 #pedal-item-image {
     position: relative;
-    height: 5em;
+    height: 10em;
     width: auto;
     margin-left: auto;
     margin-right: auto;
@@ -305,7 +305,7 @@ body {
     background-color: transparent;
     display: flex;
     flex-wrap: wrap;
-    height: 10em;
+    height: 5em;
     max-width: 90%;
     margin-left: auto;
     margin-right: auto;
@@ -314,8 +314,17 @@ body {
 
 #pedal-board-itself {
     width: 90%;
-    height: 23em;
-    margin-top: 1em;
+    height: 29em;
+    margin-top: 0.2em;
     margin-left: auto;
     margin-right: auto;
+}
+
+#pedal-board-images {
+    position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 4em;
+    width: auto;
+    margin: 0.2em;
 }
